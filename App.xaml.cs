@@ -4,8 +4,6 @@ namespace WinTrayApp;
 
 public partial class App : Application
 {
-    private Services.TrayService? _trayService;
-
     public App()
     {
         this.InitializeComponent();
@@ -13,9 +11,6 @@ public partial class App : Application
 
     protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
     {
-        _trayService = new Services.TrayService();
-        _trayService.Initialize();
-
         var window = new MainWindow();
         window.Activate();
     }
