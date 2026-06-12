@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using ScintillaNET;
 
 namespace MyApp
 {
@@ -10,12 +11,16 @@ namespace MyApp
             this.Width = 800;
             this.Height = 600;
 
-            var label = new Label();
-            label.Text = "Hello from WinForms";
-            label.AutoSize = true;
-            label.Left = 10;
-            label.Top = 10;
-            this.Controls.Add(label);
+            var editor = new Scintilla();
+            editor.Dock = DockStyle.Fill;
+            // Basic configuration
+            editor.Margins[0].Width = 20;
+            editor.WrapMode = WrapMode.None;
+            editor.Lexer = Lexer.Null;
+            editor.Text = "// Welcome to the Scintilla editor\r\n" +
+                          "// Add your code here...\r\n";
+
+            this.Controls.Add(editor);
         }
     }
 }

@@ -24,6 +24,18 @@
 
   <ItemGroup>
     <!-- Windows Forms apps don't need the Windows App SDK -->
+    <PackageReference Include="Scintilla5.NET" Version="5.3.3" />
   </ItemGroup>
 
+<!-- Copy Scintilla native binaries into output build\x64 so Scintilla.NET can locate them at runtime.
+     The package ships natives under build\x64\ and build\x86\; Scintilla.NET looks for build\x64\ next to the exe. -->
+<Target Name="CopyScintillaNative" AfterTargets="Build">
+  <ItemGroup>
+    <ScintillaNativeFiles Include="$(NuGetPackageRoot)scintilla5.net\5.3.3\build\x64\*.*" />
+  </ItemGroup>
+
+  <!-- Scintilla.NET walks 2 levels up from the exe (bin\Debug\net*\win-x64\) to find build\x64\ -->
+  <MakeDir Directories="$(TargetDir)..\..\build\x64\" />
+  <Copy SourceFiles="@(ScintillaNativeFiles)" DestinationFolder="$(TargetDir)..\..\build\x64\" SkipUnchangedFiles="true" />
+</Target>
 </Project>
