@@ -16,7 +16,7 @@ namespace MyApp
             // Basic configuration
             editor.Margins[0].Width = 20;
             editor.WrapMode = WrapMode.None;
-            editor.Lexer = Lexer.Null;
+            editor.LexerName = null;
             editor.Text = "// Welcome to the Scintilla editor\r\n" +
                           "// Add your code here...\r\n";
 
