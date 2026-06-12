@@ -1,6 +1,6 @@
 using Microsoft.UI.Xaml;
 
-namespace WinTrayApp;
+namespace MyApp;
 
 public partial class App : Application
 {
