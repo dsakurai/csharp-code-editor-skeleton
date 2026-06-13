@@ -17,8 +17,10 @@ namespace MyApp
             editor.Margins[0].Width = 20;
             editor.WrapMode = WrapMode.None;
             editor.LexerName = null;
-            editor.Text = "// Welcome to the Scintilla editor\r\n" +
-                          "// Add your code here...\r\n";
+            editor.Text = """
+                // Welcome to the Scintilla editor
+                // Add your code here...
+                """;
 
             this.Controls.Add(editor);
         }
