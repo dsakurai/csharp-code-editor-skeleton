@@ -1,6 +1,6 @@
-# WinUI 3 skeleton
+# WinForms ScintillaNET Editor skeleton
 
-This is a minimal WinUI 3 unpackaged project skeleton with a simple main window.
+This is a minimal project skeleton with a simple code editor view using Scintilla.
 
 Build/run (developer machine must have Windows App SDK and .NET SDK installed):
 
